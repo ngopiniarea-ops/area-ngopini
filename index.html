@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ngopini Area</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -28,19 +28,22 @@
     .header-icons {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 10px;
+      animation: fadeIn 1.3s ease;
     }
-    .header-icons a {
-      text-decoration: none;
-      color: #6B4F3A;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .header-icons a:hover { color: #9c7a5f; }
     .insta-icon svg {
       width: 26px; height: 26px; fill: #6B4F3A; transition: 0.3s;
     }
     .insta-icon:hover svg { fill: #9c7a5f; }
+    .insta-text {
+      font-weight: 600;
+      color: #6B4F3A;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .insta-text:hover { color: #9c7a5f; }
 
     .hero {
       text-align: center;
@@ -117,6 +120,7 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      animation: fadeIn 2s ease;
     }
     footer .insta-icon svg { width: 24px; height: 24px; fill: #6B4F3A; }
     footer .insta-icon:hover svg { fill: #9c7a5f; }
@@ -136,10 +140,10 @@
   <header>
     <img src="LOGO NGOPINI AREA.png" alt="Ngopini Area Logo">
     <div class="header-icons">
-      <a href="https://wa.me/6285381023830">Pesan via WhatsApp ☕</a>
       <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-icon" title="Instagram Ngopini Area">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224,202a53,53,0,1,0,53,53A53,53,0,0,0,224,202Zm124-41a54,54,0,0,0-30-30C295,122,224,122,224,122s-71,0-94,9a54,54,0,0,0-30,30c-9,23-9,94-9,94s0,71,9,94a54,54,0,0,0,30,30c23,9,94,9,94,9s71,0,94-9a54,54,0,0,0,30-30c9-23,9-94,9-94S357,184,348,161ZM224,338a74,74,0,1,1,74-74A74,74,0,0,1,224,338Zm85-135a17,17,0,1,1,17-17A17,17,0,0,1,309,203Z"/></svg>
       </a>
+      <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-text">KLIK IG</a>
     </div>
   </header>
 
