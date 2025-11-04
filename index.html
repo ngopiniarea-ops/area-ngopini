@@ -27,7 +27,7 @@
       top: 0;
       z-index: 10;
     }
-    header img { height: 65px; }
+    header img { height: 70px; }
     .insta-text {
       color: #6B4F3A;
       font-weight: 600;
@@ -58,17 +58,18 @@
       animation: fadeIn 1s ease-in-out;
     }
     .menu h2 { color: #4b3621; margin-bottom: 15px; }
-    .menu-item { margin-bottom: 25px; text-align: left; }
+    .menu-item { margin-bottom: 18px; text-align: left; }
     .menu-item-title { display: flex; justify-content: space-between; font-weight: 600; }
     .menu-item-desc { font-size: 15px; color: #7a6651; }
 
-    /* Foto produk (diperkecil + tetap elegan) */
+    /* Foto produk + animasi */
     .product-photo {
-      width: 80%;
+      width: 90%;
+      max-width: 600px;
       border-radius: 10px;
-      margin: 20px auto 25px;
+      margin: 25px auto;
       display: block;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1.3s ease forwards;
@@ -82,7 +83,19 @@
       font-size: 14px;
     }
 
-    /* Carousel Testimoni (ukuran disesuaikan) */
+    /* Efek Gelombang */
+    .wave {
+      position: relative;
+      height: 100px;
+      overflow: hidden;
+    }
+    .wave svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Carousel Testimoni */
     .testimoni {
       position: relative;
       max-width: 850px;
@@ -99,18 +112,19 @@
     }
     .slider {
       display: flex;
-      width: 600%;
-      transition: transform 2s ease-in-out;
+      width: 100%;
+      transition: transform 1s ease-in-out; /* animasi geser halus */
     }
     .slide {
-      flex: 1 0 100%;
+      flex: 0 0 100%;
       padding: 30px;
     }
     .slide img {
-      width: 70%;
-      max-width: 600px;
+      width: 90%;
       border-radius: 12px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      max-height: 400px;
+      object-fit: cover;
     }
 
     /* Tombol Navigasi */
@@ -121,7 +135,7 @@
       background-color: rgba(107,79,58,0.7);
       color: #fff;
       border: none;
-      padding: 8px 13px;
+      padding: 10px 15px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 20px;
@@ -135,14 +149,6 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsif untuk HP */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 28px; }
-      .order a { font-size: 16px; padding: 10px 22px; }
-      .product-photo { width: 95%; }
-      .slide img { width: 90%; }
     }
   </style>
 </head>
@@ -164,8 +170,8 @@
 
   <section class="menu">
     <h2>Menu Minuman</h2>
+    <img src="fotoproduk.jpg" alt="Foto Produk Kopi Ngopini Area" class="product-photo">
     <div class="menu-item">
-      <img src="fotoproduk.jpg" alt="Foto Produk Kopi Ngopini Area" class="product-photo">
       <div class="menu-item-title"><span>Kopi Aren Original</span><span>Rp 8.000</span></div>
       <div class="menu-item-desc">☕ Gula aren alami berpadu dengan espresso hangat, klasik dan menenangkan.</div>
     </div>
@@ -179,6 +185,11 @@
     </div>
   </section>
 
+  <!-- Efek gelombang atas testimoni -->
+  <div class="wave">
+    <svg viewBox="0 0 1440 320"><path fill="#fffaf3" fill-opacity="1" d="M0,128L60,154.7C120,181,240,235,360,234.7C480,235,600,181,720,154.7C840,128,960,128,1080,154.7C1200,181,1320,235,1380,261.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+  </div>
+
   <!-- Testimoni -->
   <section class="testimoni">
     <h2>Testimoni Pelanggan</h2>
@@ -188,11 +199,14 @@
       <div class="slide"><img src="testimoni3.jpg" alt="Testimoni 3"></div>
       <div class="slide"><img src="testi4.jpg" alt="Testimoni 4"></div>
       <div class="slide"><img src="testi5.jpg" alt="Testimoni 5"></div>
-      <div class="slide"><img src="testi6.jpg" alt="Testimoni 6"></div>
     </div>
     <button class="nav-btn prev" onclick="prevSlide()">‹</button>
     <button class="nav-btn next" onclick="nextSlide()">›</button>
   </section>
+
+  <div class="wave">
+    <svg viewBox="0 0 1440 320"><path fill="#fffaf3" fill-opacity="1" d="M0,192L60,170.7C120,149,240,107,360,101.3C480,96,600,128,720,149.3C840,171,960,181,1080,176C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+  </div>
 
   <footer>
     <p>© 2025 Ngopini Area — Instagram: 
@@ -204,10 +218,11 @@
     let currentIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const slider = document.getElementById('slider');
+    const totalSlides = slides.length;
 
     function showSlide(index) {
-      if (index >= slides.length) currentIndex = 0;
-      else if (index < 0) currentIndex = slides.length - 1;
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
       else currentIndex = index;
       slider.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
@@ -215,7 +230,7 @@
     function nextSlide() { showSlide(currentIndex + 1); }
     function prevSlide() { showSlide(currentIndex - 1); }
 
-    setInterval(() => { nextSlide(); }, 8000);
+    setInterval(nextSlide, 10000); // Geser otomatis setiap 10 detik
   </script>
 
 </body>
