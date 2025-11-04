@@ -6,145 +6,92 @@
   <title>Ngopini Area</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fffdf9;
       color: #4b3621;
-      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
+
     header {
-      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px 40px;
       border-bottom: 1px solid #e0d4c2;
-      background-color: #ffffff;
+      background-color: white;
       position: sticky;
       top: 0;
       z-index: 10;
     }
     header img { height: 70px; }
-    .header-icons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      animation: fadeIn 1.3s ease;
-    }
-    .insta-icon svg {
-      width: 26px; height: 26px; fill: #6B4F3A; transition: 0.3s;
-    }
-    .insta-icon:hover svg { fill: #9c7a5f; }
     .insta-text {
-      font-weight: 600;
       color: #6B4F3A;
-      font-size: 16px;
-      cursor: pointer;
+      font-weight: 600;
       text-decoration: none;
-      transition: 0.3s;
     }
-    .insta-text:hover { color: #9c7a5f; }
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
-      animation: fadeIn 1.2s ease;
-    }
-    .hero h1 { font-size: 42px; color: #3e2b1d; }
-    .hero p { font-size: 18px; color: #6b5540; margin-top: 10px; }
+    .hero { padding: 60px 20px 30px; }
+    .hero h1 { font-size: 36px; color: #3e2b1d; }
+    .hero p { color: #6b5540; }
 
-    .order { text-align: center; margin: 40px 0; }
     .order a {
       background: #6B4F3A;
       color: white;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 18px;
       transition: all 0.4s ease;
-      box-shadow: 0 0 0px transparent;
     }
-    .order a:hover {
-      background: #8b6b52;
-      box-shadow: 0 0 10px #d4b89f;
-    }
+    .order a:hover { background: #8b6b52; }
 
     .menu {
       max-width: 650px;
-      margin: 60px auto;
+      margin: 40px auto;
+      background: #fffaf3;
+      border-radius: 10px;
       padding: 20px;
-      background-color: #fffaf3;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      animation: fadeIn 1.5s ease;
+      animation: fadeIn 1s ease-in-out;
     }
-    .menu h2 {
-      text-align: center;
-      color: #4b3621;
-      margin-bottom: 20px;
-    }
-    .menu-item {
-      margin-bottom: 20px;
-    }
-    .menu-item-title {
-      display: flex;
-      justify-content: space-between;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    .menu-item-desc {
-      font-size: 15px;
-      color: #7a6651;
-      margin-top: 6px;
-      line-height: 1.5;
-    }
+    .menu h2 { color: #4b3621; margin-bottom: 15px; }
+    .menu-item { margin-bottom: 18px; text-align: left; }
+    .menu-item-title { display: flex; justify-content: space-between; font-weight: 600; }
+    .menu-item-desc { font-size: 15px; color: #7a6651; }
 
-    .about {
-      text-align: center;
-      padding: 60px 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #4b3b2b;
-      animation: fadeIn 2s ease;
+    /* Foto produk + animasi */
+    .product-photo {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.3s ease forwards;
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      margin-top: 60px;
       border-top: 1px solid #ddd;
-      font-size: 14px;
+      margin-top: 60px;
+      padding: 20px;
       color: #6b5540;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      animation: fadeIn 2s ease;
+      font-size: 14px;
     }
-    footer .insta-icon svg { width: 24px; height: 24px; fill: #6B4F3A; }
-    footer .insta-icon:hover svg { fill: #9c7a5f; }
 
-    @keyframes fadeIn {
+    /* Animasi */
+    @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media(max-width:600px){
-      .hero h1 { font-size: 30px; }
-      .order a { font-size: 16px; padding: 12px 26px; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="LOGO NGOPINI AREA.png" alt="Ngopini Area Logo">
-    <div class="header-icons">
-      <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-icon" title="Instagram Ngopini Area">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224,202a53,53,0,1,0,53,53A53,53,0,0,0,224,202Zm124-41a54,54,0,0,0-30-30C295,122,224,122,224,122s-71,0-94,9a54,54,0,0,0-30,30c-9,23-9,94-9,94s0,71,9,94a54,54,0,0,0,30,30c23,9,94,9,94,9s71,0,94-9a54,54,0,0,0,30-30c9-23,9-94,9-94S357,184,348,161ZM224,338a74,74,0,1,1,74-74A74,74,0,0,1,224,338Zm85-135a17,17,0,1,1,17-17A17,17,0,0,1,309,203Z"/></svg>
-      </a>
-      <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-text">KLIK IG</a>
-    </div>
+    <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-text">KLIK IG</a>
   </header>
 
   <section class="hero">
@@ -152,39 +99,32 @@
     <p>Tempat ngopi, ngobrol, dan berbagi ide kreatif di lingkungan kampus.</p>
   </section>
 
-    <section class="order">
+  <section class="order">
     <a href="https://wa.me/6285381023830">Pesan Sekarang via WhatsApp</a>
   </section>
-  
+
   <section class="menu">
     <h2>Menu Minuman</h2>
-
     <div class="menu-item">
       <div class="menu-item-title"><span>Kopi Aren Original</span><span>Rp 8.000</span></div>
-      <div class="menu-item-desc">☕ Rasa manis alami dari gula aren berpadu dengan espresso yang hangat, klasik, dan menenangkan.</div>
+      <div class="menu-item-desc">☕ Gula aren alami berpadu dengan espresso hangat, klasik dan menenangkan.</div>
     </div>
-
     <div class="menu-item">
       <div class="menu-item-title"><span>Cranberrycano</span><span>Rp 9.000</span></div>
-      <div class="menu-item-desc">🍒 Perpaduan espresso dan sari cranberry yang menyegarkan, memberi keseimbangan asam dan pahit.</div>
+      <div class="menu-item-desc">🍒 Espresso dengan sari cranberry menyegarkan, seimbang antara asam dan pahit.</div>
     </div>
-
     <div class="menu-item">
       <div class="menu-item-title"><span>Salted Caramel Latte</span><span>Rp 10.000</span></div>
-      <div class="menu-item-desc">🍯 Kombinasi lembut susu, karamel asin, dan espresso menciptakan rasa manis gurih yang creamy.</div>
+      <div class="menu-item-desc">🍯 Lembutnya susu dan karamel asin berpadu dengan espresso gurih nan creamy.</div>
     </div>
-  </section>
 
-  <section class="about">
-    <h2>Tentang Ngopini Area</h2>
-    <p>Kami hadir dengan produk kopi yang ekonomis dan tentunya berkualitas, serta terjangkau bagi seluruh mahasiswa, mendukung terciptanya budaya bertukar ide di lingkungan kampus.</p>
+    <!-- FOTO PRODUK DILETAKKAN DI SINI -->
+    <img src="fotoproduk.jpg" alt="Foto Produk Kopi Ngopini Area" class="product-photo">
   </section>
 
   <footer>
-    <a href="https://instagram.com/ngopini_area" target="_blank" class="insta-icon" title="Instagram Ngopini Area">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224,202a53,53,0,1,0,53,53A53,53,0,0,0,224,202Zm124-41a54,54,0,0,0-30-30C295,122,224,122,224,122s-71,0-94,9a54,54,0,0,0-30,30c-9,23-9,94-9,94s0,71,9,94a54,54,0,0,0,30,30c23,9,94,9,94,9s71,0,94-9a54,54,0,0,0,30-30c9-23,9-94,9-94S357,184,348,161ZM224,338a74,74,0,1,1,74-74A74,74,0,0,1,224,338Zm85-135a17,17,0,1,1,17-17A17,17,0,0,1,309,203Z"/></svg>
-    </a>
-    <p>© 2025 Ngopini Area — Instagram: @ngopini_area</p>
+    <p>© 2025 Ngopini Area — Instagram: <a href="https://instagram.com/ngopini_area" target="_blank">@ngopini_area</a></p>
   </footer>
+
 </body>
 </html>
