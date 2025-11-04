@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ngopini Area</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font elegan + modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -34,7 +35,11 @@
     }
 
     .hero { padding: 60px 20px 30px; }
-    .hero h1 { font-size: 36px; color: #3e2b1d; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: #3e2b1d;
+    }
     .hero p { color: #6b5540; }
 
     .order a {
@@ -45,6 +50,7 @@
       text-decoration: none;
       font-size: 18px;
       transition: all 0.4s ease;
+      font-family: 'Poppins', sans-serif;
     }
     .order a:hover { background: #8b6b52; }
 
@@ -56,10 +62,24 @@
       padding: 20px;
       animation: fadeIn 1s ease-in-out;
     }
-    .menu h2 { color: #4b3621; margin-bottom: 15px; }
+    .menu h2 {
+      font-family: 'Playfair Display', serif;
+      color: #4b3621;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
     .menu-item { margin-bottom: 18px; text-align: left; }
-    .menu-item-title { display: flex; justify-content: space-between; font-weight: 600; }
-    .menu-item-desc { font-size: 15px; color: #7a6651; }
+    .menu-item-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .menu-item-desc {
+      font-size: 15px;
+      color: #7a6651;
+      font-family: 'Poppins', sans-serif;
+    }
 
     .product-photo {
       width: 90%;
@@ -71,7 +91,7 @@
       animation: fadeInUp 1.3s ease forwards;
     }
 
-    /* Testimoni */
+    /* Bagian Testimoni */
     .testimoni {
       position: relative;
       max-width: 850px;
@@ -85,7 +105,11 @@
     .testimoni h2 {
       margin-top: 30px;
       color: #4b3621;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      letter-spacing: 0.5px;
     }
+
     .slider-container {
       width: 100%;
       overflow: hidden;
@@ -149,6 +173,7 @@
       padding: 20px;
       color: #6b5540;
       font-size: 14px;
+      font-family: 'Poppins', sans-serif;
     }
 
     @keyframes fadeInUp {
@@ -177,15 +202,15 @@
     <h2>Menu Minuman</h2>
     <img src="fotoproduk.jpg" alt="Foto Produk Kopi Ngopini Area" class="product-photo">
     <div class="menu-item">
-      <div class="menu-item-title"><span>☕ Kopi Aren Original</span>Rp 8.000</span></div>
+      <div class="menu-item-title"><span>☕ Aren Latte<span>Rp 8.000</span></div>
       <div class="menu-item-desc">Paduan kopi susu creamy dan manis alami dari gula aren pilihan, menghadirkan rasa lokal yang Autentik tapi tetap kekinian. Setiap tegukan kayak pelukan lembut di pagi hari—bikin mood naik dan semangat on terus!</div>
     </div>
     <div class="menu-item">
-      <div class="menu-item-title"><span>🍒Cranberrycano</span>Rp 9.000</span></div>
+      <div class="menu-item-title"><span>🍒Cranberrycano<span>Rp 9.000</span></div>
       <div class="menu-item-desc">Kopi nggak selalu harus pahit! Cranberrycano hadir dengan campuran espresso bold dan jus cranberry yang segar manis-asam. Tegukan pertama langsung nyegerin, tegukan kedua bikin nagih. Cocok banget buat kamu yang suka kopi tapi pengen ada twist buah yang fresh!</div>
     </div>
     <div class="menu-item">
-      <div class="menu-item-title"><span>🍯 Salted Caramel Latte</span>Rp 10.000</span></div>
+      <div class="menu-item-title"><span>🍯 Salted Caramel Latte<span>Rp 10.000</span></div>
       <div class="menu-item-desc"> Rasakan sensasi creamy latte dengan lelehan karamel dan sedikit sentuhan asin yang pas banget. Perpaduan rasa manis-gurih yang elegan ini bakal manjain lidah kamu sampai tetes terakhir. Bukan cuma kopi, ini mood booster dalam botol!</div>
     </div>
   </section>
